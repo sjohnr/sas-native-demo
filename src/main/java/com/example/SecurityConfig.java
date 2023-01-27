@@ -17,7 +17,6 @@
 package com.example;
 
 import java.security.KeyPair;
-import java.security.KeyPairGenerator;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.UUID;
@@ -96,9 +95,9 @@ public class SecurityConfig {
 
 	@Bean
 	public UserDetailsService userDetailsService() {
-		UserDetails userDetails = User.withDefaultPasswordEncoder()
+		UserDetails userDetails = User.builder()
 				.username("user")
-				.password("password")
+				.password("{noop}password")
 				.roles("USER")
 				.build();
 
