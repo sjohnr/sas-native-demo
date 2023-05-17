@@ -46,7 +46,7 @@ public class SecurityConfig {
 	public UserDetailsService userDetailsService() {
 		UserDetails userDetails = User.builder()
 				.username("user")
-				.password("{noop}password")
+				.password("{bcrypt}$2a$10$ob6DXNkPw2u3EoMQ9bONB.D6v9zgf7GkATG8.hXesYOI8y9MIyczG") // password
 				.roles("USER")
 				.build();
 
